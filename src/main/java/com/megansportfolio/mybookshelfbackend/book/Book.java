@@ -21,6 +21,9 @@ public class Book{
     @Column(name = "current_page")
     private long currentPage;
 
+    @Column(name = "shelf_id")
+    private long shelfId;
+
     public long getId(){
         return this.id;
     }
@@ -53,4 +56,11 @@ public class Book{
         this.currentPage = currentPage;
     }
 
+    public long getShelfId() {
+        return this.shelfId;
+    }
+
+    public void setShelfId(long shelfId) {
+        this.shelfId = shelfId;
+    }
 }
