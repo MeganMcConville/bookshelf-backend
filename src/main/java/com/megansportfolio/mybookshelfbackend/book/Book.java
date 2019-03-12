@@ -1,6 +1,9 @@
 package com.megansportfolio.mybookshelfbackend.book;
 
+import com.megansportfolio.mybookshelfbackend.comment.Comment;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "book")
@@ -23,6 +26,9 @@ public class Book{
 
     @Column(name = "shelf_id")
     private long shelfId;
+
+    @OneToMany(mappedBy = "bookId")
+    private List<Comment> comments;
 
     public long getId(){
         return this.id;
@@ -62,5 +68,13 @@ public class Book{
 
     public void setShelfId(long shelfId) {
         this.shelfId = shelfId;
+    }
+
+    public List<Comment> getComments(){
+        return this.comments;
+    }
+
+    public void setComments(List<Comment> comments){
+        this.comments = comments;
     }
 }

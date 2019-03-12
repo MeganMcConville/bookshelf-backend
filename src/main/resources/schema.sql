@@ -10,3 +10,9 @@ CREATE TABLE book(
     current_page NUMERIC NOT NULL,
     shelf_id BIGINT NOT NULL REFERENCES shelf(id)
     );
+
+CREATE TABLE comment(
+    id BIGSERIAL PRIMARY KEY,
+    book_id BIGINT NOT NULL REFERENCES book(id),
+    content VARCHAR(500) NOT NULL
+    );
