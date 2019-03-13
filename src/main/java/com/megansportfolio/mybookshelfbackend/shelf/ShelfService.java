@@ -14,4 +14,8 @@ public class ShelfService {
     public List<Shelf> getShelves(){
         return shelfDao.findAll();
     }
+
+    public long createNewShelf(Shelf shelf){
+        return shelfDao.save(shelf).getId();
+    }
 }
