@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/shelves", consumes = "application/json")
+@RequestMapping(value = "/shelves")
 public class ShelfController {
 
     @Autowired
@@ -20,7 +20,7 @@ public class ShelfController {
         return shelfService.getShelves();
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
     public long createNewShelf(@RequestBody Shelf shelf){
 
         return shelfService.createNewShelf(shelf);
