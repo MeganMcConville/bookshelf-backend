@@ -14,7 +14,9 @@ public class WebConfiguration {
         return new WebMvcConfigurerAdapter(){
             @Override
             public void addCorsMappings(CorsRegistry registry){
-                registry.addMapping("/shelves").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/shelves/**").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/comments").allowedOrigins("http://localhost:4200");
+                registry.addMapping("/books/**").allowedOrigins("http://localhost:4200");
             }
         };
     }

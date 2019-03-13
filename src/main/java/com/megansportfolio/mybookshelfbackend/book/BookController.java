@@ -1,9 +1,7 @@
 package com.megansportfolio.mybookshelfbackend.book;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,6 +15,11 @@ public class BookController {
     @RequestMapping(method = RequestMethod.GET)
     public List<Book> getBooks(){
         return bookService.getBooks();
+    }
+
+    @RequestMapping(value = "/{bookId}/updateCurrentPage", method = RequestMethod.POST)
+    public void updateCurrentPage(@PathVariable long bookId, @RequestParam(value = "currentPage") long currentPage){
+        bookService.updateCurrentPage(bookId, currentPage);
     }
 
 }

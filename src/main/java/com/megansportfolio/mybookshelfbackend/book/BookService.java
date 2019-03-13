@@ -14,4 +14,10 @@ public class BookService {
     public List<Book> getBooks(){
         return bookDao.findAll();
     }
+
+    public void updateCurrentPage(long bookId, long currentPage){
+        Book book = bookDao.findById(bookId).get();
+        book.setCurrentPage(currentPage);
+        bookDao.save(book);
+    }
 }
