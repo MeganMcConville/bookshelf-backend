@@ -22,4 +22,9 @@ public class BookController {
         bookService.updateCurrentPage(bookId, currentPage);
     }
 
+    @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
+    public long createNewBook(@RequestBody Book book){
+        return bookService.createNewBook(book);
+    }
+
 }

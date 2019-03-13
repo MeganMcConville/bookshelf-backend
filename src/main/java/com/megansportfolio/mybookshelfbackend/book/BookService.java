@@ -20,4 +20,8 @@ public class BookService {
         book.setCurrentPage(currentPage);
         bookDao.save(book);
     }
+
+    public long createNewBook(Book book){
+        return bookDao.save(book).getId();
+    }
 }
