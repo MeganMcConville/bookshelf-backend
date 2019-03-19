@@ -27,7 +27,7 @@ public class Book{
     @Column(name = "shelf_id")
     private long shelfId;
 
-    @OneToMany(mappedBy = "bookId")
+    @OneToMany(mappedBy = "bookId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments;
 
     public long getId(){

@@ -24,4 +24,8 @@ public class BookService {
     public long createNewBook(Book book){
         return bookDao.save(book).getId();
     }
+
+    public void deleteBook(long bookId){
+        bookDao.deleteById(bookId);
+    }
 }
