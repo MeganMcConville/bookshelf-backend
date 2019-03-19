@@ -18,4 +18,8 @@ public class ShelfService {
     public long createNewShelf(Shelf shelf){
         return shelfDao.save(shelf).getId();
     }
+
+    public void deleteShelf(long shelfId){
+        shelfDao.deleteById(shelfId);
+    }
 }

@@ -17,7 +17,7 @@ public class Shelf {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "shelfId")
+    @OneToMany(mappedBy = "shelfId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book> books;
 
     public long getId(){

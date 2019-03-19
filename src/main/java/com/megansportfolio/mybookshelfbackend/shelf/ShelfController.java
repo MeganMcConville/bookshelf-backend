@@ -1,10 +1,7 @@
 package com.megansportfolio.mybookshelfbackend.shelf;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,10 @@ public class ShelfController {
 
         return shelfService.createNewShelf(shelf);
 
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{shelfId}")
+    public void deleteShelf(@PathVariable long shelfId){
+        shelfService.deleteShelf(shelfId);
     }
 }
